@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body {
+      background-color: white;
+    }
+
+    #map-container {
+      height: 800px;
+      width: 100%;
+      background-color: white;
+    }
+
+    #position {
+      position: absolute;
+      height: 72px;
+      width: 72px;
+      bottom: 4%;
+      right: 8%;
+      transform: scale(0.8);
+      background-color: #03dac5;
+      box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
+      border-radius: 36px;
+      z-index: 2
+    }
+  </style>
+  <script src="../lib/esmap.min.js"></script>
+</head>
+
+<body>
+  <div id="map-container">
+  </div>
+  <!-- <div id="position">
+    <img id="posicon" src="../image/aim.png" alt="定位">
+  </div> -->
+  <script>
+    var map = new esmap.ESMap({
+      container: document.getElementById('map-container'), //地图显示容器
+      mapDataSrc: "../data", //地图数据位置，与推荐目录相同可省略
+      mapThemeSrc: "../data/theme", //地图主题位置，与推荐目录相同可省略
+      token: "Huance17", //打开地图对应的token
+      visibleFloors: "all",
+      defaultScaleLevel: 18,
+      defaultCenter: {x:13041995.346893959,y:4058866.1493550693},
+      defaultAngle: "90",
+      defaultTiltAngle: "30"
+    });
+    map.openMapById("DX17_3Huance");
+  </script>
+  <script src="../js/mapoperate.js"></script>
+  <script>
+    // var posbtn = document.getElementById('position');
+    // posbtn.addEventListener('click',function(){
+    //   map.getFloor(1).removeLayersByNames("posicon");
+    //   num = Math.floor(Math.random()*83+124829);
+    //   queryPosIconById(num);
+    //})
+  </script>
+</body>
+
+</html>
